@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/authService";
 
 import { AuthContext } from "../context/AuthContext";
+import Navbar from "../components/Navbar";
 
 const LoginPage = () => {
 
@@ -83,6 +84,13 @@ const LoginPage = () => {
           onChange={handleChange}
           className="w-full p-3 mb-4 rounded bg-slate-700 outline-none"
         />
+        <div>
+
+  <Navbar />
+
+  PAGE CONTENT
+
+</div>
 
         <button
           className="w-full bg-blue-500 p-3 rounded hover:bg-blue-600"

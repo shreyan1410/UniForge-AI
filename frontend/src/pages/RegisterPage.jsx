@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { registerUser } from "../services/authService";
+import Navbar from "../components/Navbar";
 
 const RegisterPage = () => {
 
@@ -77,6 +78,13 @@ const RegisterPage = () => {
           onChange={handleChange}
           className="w-full p-3 mb-4 rounded bg-slate-700 outline-none"
         />
+        <div>
+
+  <Navbar />
+
+  PAGE CONTENT
+
+</div>
 
         <button
           className="w-full bg-blue-500 p-3 rounded hover:bg-blue-600"
