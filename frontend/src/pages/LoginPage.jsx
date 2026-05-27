@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/authService";
 
 import { AuthContext } from "../context/AuthContext";
+
 import Navbar from "../components/Navbar";
 
 const LoginPage = () => {
@@ -42,13 +43,9 @@ const LoginPage = () => {
 
       setUser(data);
 
-      alert("Login Successful");
-
       navigate("/dashboard");
 
     } catch (error) {
-
-      console.log(error);
 
       alert("Invalid Credentials");
 
@@ -58,47 +55,46 @@ const LoginPage = () => {
 
   return (
 
-    <div className="flex items-center justify-center h-screen">
+    <div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="bg-slate-800 p-10 rounded-xl w-[400px]"
-      >
+      <Navbar />
 
-        <h2 className="text-3xl font-bold mb-6 text-center">
-          Login
-        </h2>
+      <div className="flex items-center justify-center h-[90vh]">
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter email"
-          onChange={handleChange}
-          className="w-full p-3 mb-4 rounded bg-slate-700 outline-none"
-        />
-
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter password"
-          onChange={handleChange}
-          className="w-full p-3 mb-4 rounded bg-slate-700 outline-none"
-        />
-        <div>
-
-  <Navbar />
-
-  PAGE CONTENT
-
-</div>
-
-        <button
-          className="w-full bg-blue-500 p-3 rounded hover:bg-blue-600"
+        <form
+          onSubmit={handleSubmit}
+          className="bg-slate-800 p-10 rounded-xl w-[400px]"
         >
-          Login
-        </button>
 
-      </form>
+          <h2 className="text-4xl font-bold mb-8 text-center">
+            Login
+          </h2>
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            onChange={handleChange}
+            className="w-full p-4 mb-5 rounded bg-slate-700 outline-none"
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            onChange={handleChange}
+            className="w-full p-4 mb-5 rounded bg-slate-700 outline-none"
+          />
+
+          <button
+            className="w-full bg-blue-500 p-4 rounded hover:bg-blue-600"
+          >
+            Login
+          </button>
+
+        </form>
+
+      </div>
 
     </div>
 
