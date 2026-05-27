@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const resumeRoutes = require("./routes/resumeRoutes");
 
 dotenv.config();
 
@@ -16,11 +17,12 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+app.use("/uploads", express.static("uploads"));
 // Test Route
 app.get("/", (req, res) => {
     res.send("UniForge AI Backend Running");
 });
+app.use("/api/resume", resumeRoutes);
 
 // Auth Routes
 app.use("/api/auth", authRoutes);
