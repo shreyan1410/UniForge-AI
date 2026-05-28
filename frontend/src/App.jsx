@@ -10,6 +10,7 @@ import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import ResumePage from "./pages/ResumePage";
+import AIResumePage from "./pages/AIResumePage";
 const App = () => {
   return (
 
@@ -26,7 +27,14 @@ const App = () => {
           path="/login"
           element={<LoginPage />}
         />
-
+        <Route
+  path="/ai-resume"
+  element={
+    <ProtectedRoute>
+      <AIResumePage />
+    </ProtectedRoute>
+  }
+/>
         <Route
           path="/register"
           element={<RegisterPage />}
