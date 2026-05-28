@@ -1,14 +1,18 @@
 import Sidebar from "../components/Sidebar";
 
+import Topbar from "../components/Topbar";
+
 const DashboardLayout = ({ children }) => {
 
   return (
 
-    <div className="flex flex-col md:flex-row min-h-screen bg-slate-950 text-white">
+    <div className="flex min-h-screen bg-[#f6f8fc]">
 
       <Sidebar />
 
-      <main className="flex-1 p-6 md:p-8">
+      <main className="flex-1 px-8 py-6 overflow-y-auto">
+
+        <Topbar />
 
         {children}
 
@@ -17,6 +21,7 @@ const DashboardLayout = ({ children }) => {
     </div>
 
   );
+
 };
 
 export default DashboardLayout;
